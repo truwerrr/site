@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 99%; /* #fafafb */
+    --foreground: 232 30% 28%; /* ~#414773 */
+    --card: 0 0% 100%;
+    --card-foreground: 232 30% 28%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 232 30% 28%;
+    --primary: 172 74% 47%; /* #21d1b8 */
+    --primary-foreground: 210 40% 98%;
+    --secondary: 276 45% 53%; /* #bf5497 */
+    --secondary-foreground: 210 40% 98%;
+    --muted: 223 17% 86%; /* #cad0dc */
+    --muted-foreground: 232 14% 60%; /* #91a0c8 */
+    --accent: 47 86% 52%; /* #edb419 */
+    --accent-foreground: 232 30% 28%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 220 15% 90%;
+    --input: 220 15% 90%;
+    --ring: 172 74% 47%;
+    --radius: 0.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+
+  .dark {
+    --background: 232 30% 15%;
+    --foreground: 210 40% 98%;
+    --card: 232 30% 18%;
+    --card-foreground: 210 40% 98%;
+    --popover: 232 30% 18%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 172 74% 47%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 276 45% 53%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 232 30% 22%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 47 86% 52%;
+    --accent-foreground: 232 30% 18%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 232 30% 22%;
+    --input: 232 30% 22%;
+    --ring: 172 74% 47%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html { font-family: 'Lato', var(--font-body), system-ui, sans-serif; }
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  /* Input fields styling */
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="number"],
+  input[type="tel"],
+  input[type="url"],
+  textarea,
+  select {
+    @apply bg-white text-[#2f2d42] border-2 border-[#edb419];
+  }
+  
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="password"]:focus,
+  input[type="number"]:focus,
+  input[type="tel"]:focus,
+  input[type="url"]:focus,
+  textarea:focus,
+  select:focus {
+    @apply outline-none ring-2 ring-[#edb419]/50;
+  }
+  
+  input::placeholder,
+  textarea::placeholder {
+    @apply text-[#6b6e8a];
+  }
+}
+
+/* Custom helpers */
+
+@keyframes tickerMove {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.ticker-track {
+  display: flex;
+  gap: 12px;
+  width: max-content;
+  animation: tickerMove 40s linear infinite;
+}
+
+.ticker-mask {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent 0, black 10%, black 90%, transparent 100%);
+}
+
+.hero-bg {
+  background: radial-gradient(1200px 500px at 10% 0%, rgba(33, 209, 184, 0.15) 0%, transparent 60%),
+              radial-gradient(900px 400px at 90% 10%, rgba(65, 71, 115, 0.15) 0%, transparent 60%),
+              linear-gradient(180deg, rgba(255,255,255,0.9), rgba(250,250,251,1));
+}
+
+.card-soft {
+  @apply bg-card/80 backdrop-blur-sm border;
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://ext.same-assets.com/1411108151/4264683085.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('https://ext.same-assets.com/1411108151/1876819217.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('https://ext.same-assets.com/1411108151/1451923438.woff2') format('woff2');
+}

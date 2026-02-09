@@ -1,0 +1,49 @@
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  allowedDevOrigins: ["*.preview.same-app.com"],
+  images: {
+    unoptimized: true,
+    domains: [
+      "source.unsplash.com",
+      "images.unsplash.com",
+      "ext.same-assets.com",
+      "ugc.same-assets.com",
+      "upload.wikimedia.org",
+      "homecredit.kz",
+    ],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "source.unsplash.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "ext.same-assets.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "ugc.same-assets.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "upload.wikimedia.org",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "homecredit.kz",
+        pathname: "/**",
+      },
+    ],
+  },
+};
+
+module.exports = nextConfig;
