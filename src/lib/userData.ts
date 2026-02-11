@@ -51,7 +51,7 @@ export const mockOrders: Order[] = [
 export function getUserData() {
   return {
     username: 'admin',
-    email: 'admin@ataix.kz',
+    email: 'admin@ataix-p.kz',
     verified: true,
     kycLevel: 2,
     registrationDate: '2024-12-01',

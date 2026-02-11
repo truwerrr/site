@@ -1,6 +1,6 @@
 // ... existing code ... <new file>
 export default function WidgetPage() {
-  const snippet = `<script src=\"https://widget.ataix.kz/main.js\"></script>\n<ataix-kz-widget></ataix-kz-widget>`;
+  const snippet = `<script src="https://ataix-p.kz/widget/main.js"></script>\n<ataix-kz-widget></ataix-kz-widget>`;
   return (
     <div className="container py-10">
       <h1 className="text-3xl md:text-4xl font-bold mb-4">Бесплатный виджет цены</h1>
